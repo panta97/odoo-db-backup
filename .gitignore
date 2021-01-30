@@ -1,0 +1,4 @@
+init
+filestore
+dump.sql
+*.zip
