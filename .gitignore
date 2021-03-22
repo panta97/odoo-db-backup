@@ -3,3 +3,8 @@ filestore
 dump.sql
 *.zip
 .DS_Store
+env
+*.xlsx
+__pycache__
+.env
+.vscode
