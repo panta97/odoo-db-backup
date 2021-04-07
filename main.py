@@ -8,9 +8,10 @@ from reports.clients.main import (
     cliente_descuentos,
     cliente_descuentos_all,
 )
+from reports.metas.main import metas as metas_query
 
 
-def output_excels():
+def clientes():
     ab = "B001,B003,B004,B005,B006,BA01"
     sm = "B002,BA02"
     all = "B001,B002,B003,B004,B005,B006"
@@ -69,5 +70,13 @@ def output_excels():
     dfs_excel(bundles_cc, "COMPRAS POR CLIENTE")
 
 
+def metas():
+    poscats = ["CABALLERO", "DAMA", "NINO y HOME", "DEPORTIVO"]
+    bundle = []
+    for poscat in poscats:
+        bundle.append({"df": get_df(metas_query(poscat, "AB")), "sheet": poscat})
+    dfs_excel(bundle, "METAS")
+
+
 if __name__ == "__main__":
-    output_excels()
+    metas()
