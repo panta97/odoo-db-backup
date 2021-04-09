@@ -13,3 +13,4 @@ services:
         restart: always
         container_name: db_odoo_temp
         image: 'postgres:10'
+        user: postgres
